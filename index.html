@@ -87,17 +87,223 @@
 
 
 			<section>
-<h2>XML - Syntax I</h2>
-<p>Following is a complete XML document:</p>
-<pre><code data-trim contenteditable>
-<?xml version="1.0"?>
-<contact-info>
-<name>Sophy Zhou</name>
-<company>University of Colorado Boulder</company>
-<phone>(011) 123-4567</phone>
-</contact-info>
-</code></pre>
+		
+				<h2>XML - Syntax I</h2>
+				<p>Following is a complete XML document:</p>
+				<pre><code data-trim contenteditable>
+					<?xml version="1.0"?>
+					<contact-info>
+					<name>Sophy Zhou</name>
+					<company>University of Colorado Boulder</company>
+					<phone>(011) 123-4567</phone>
+					</contact-info>
+				</code></pre>
 
+			</section>
+
+
+			<section>
+		
+				<h2>XML - Syntax II</h2>
+				<p>A XML document generally consists of two parts: </p>
+				<ul>
+				<li><strong>Document Prolog Section</strong>: The document prolog comes at the top of the document, before the root element. This section contains:</li>
+					<ul>			
+						<li>XML declaration</li>
+						<li>Document type declaration</li>
+					<ul>
+
+				<li><strong>Document Elements Section</strong>:Document Elements are the building blocks of XML. These divide the document into a hierarchy of sections, each serving a specific purpose. You can separate a document into multiple sections so that they can be rendered differently, or used by a search engine. The elements can be containers, with a combination of text and other elements.</li>
+				</ul>
+
+			</section>
+
+			<section>
+		
+				<h2>XML - Syntax III</h2>
+				<ul>
+				<p>The following diagram depicts the syntax rules to write different types of markup and text in an XML document.</p>
+				</ul>
+
+			</section>
+
+			<section>
+		
+				<h2>XML - Declaration I</h2>
+				<ul>
+				<p>The XML document can optionally have an XML declaration. It is written as below:</p>
+				<pre><code data-trim contenteditable>
+				<?xml
+ 				  version="version_number"
+   				  encoding="encoding_declaration"
+	        		  standalone="standalone_status"
+                                ?>
+				</code></pre>
+				<p>Where <em>version</em> is the XML version and <em>encoding</em> specifies the character encoding used in the document.</p>
+
+				<p><strong>Syntax Rules for XML declaration</strong></p>
+				<li>The XML declaration is case sensitive.</li>
+				<li>If document contains XML declaration, then it strictly needs to be the first statement of the XML document.</li>
+				<li>The XML declaration strictly needs be the first statement in the XML document.</li>
+				<li>An HTTP protocol can override the value of encoding that you put in the XML declaration.</li>
+				</ul>
+
+			</section>
+
+
+			<section>
+		
+				<h2>XML - Declaration II</h2>
+				<ul>
+				<p>Following are few examples of XML declarations:</p>
+				<li>XML declaration with no parameters:</li>
+		   			<pre><code data-trim contenteditable>
+					<?xml >
+					</code></pre>
+				<li>XML declaration with version definition:</li>
+					<pre><code data-trim contenteditable>
+					<?xml version="1.0">
+					</code></pre>
+				<li>XML declaration with all parameters defined:</li>
+					<pre><code data-trim contenteditable>
+					<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+					</code></pre>
+				<li>XML declaration with all parameters defined in single quotes:</li>
+					<pre><code data-trim contenteditable>
+					<?xml version='1.0' encoding='iso-8859-1' standalone='no' ?>
+					</code></pre>
+
+				</ul>
+
+			</section>
+
+
+			<section>		
+				<h2>XML - Tags I</h2>
+				<ul>
+				<p><strong>Start Tag</strong>: The beginning of every non-empty XML element is marked by a start-tag. An example of start-tag is:</p>
+				<pre><code data-trim contenteditable>
+				<address>
+				</code></pre>
+				<p><strong>End Tag</strong>: Every element that has a start tag should end with an end-tag. An example of end-tag is:</P>
+				<pre><code data-trim contenteditable>
+				</address>
+				</code></pre>
+				<p><strong>Empty Tag</strong>: The text that appears between start-tag and end-tag is called content. An element which has no content is termed as empty. An empty element can be represented in two ways as below:</p>
+				<li>A start-tag immediately followed by an end-tag as shown below:</li>
+				<pre><code data-trim contenteditable>
+				<hr></hr>
+				</code></pre>
+				<li>A complete empty-element tag is as shown below:</li>
+				<pre><code data-trim contenteditable>
+				<hr />
+				</code></pre>
+				<p>Empty-element tags may be used for any element which has no content.</p>
+				</ul>
+			</section>
+
+			<section>		
+				<h2>XML - Tags II</h2>
+				<ul>
+				<p>XML Tags Rules</p>
+				<li>Rule 1: XML tags are case-sensitive. </li>
+				<li>Rule 2: XML tags must be closed in an appropriate order, i.e., an XML tag opened inside another element must be closed before the outer element is closed.</li>
+				</ul>
+			</section>
+
+			<section>		
+				<h2>XML - Elements I</h2>
+				<ul>
+				<p>Following is the syntax to write an XML element:</p>
+				<pre><code data-trim contenteditable>
+				<element-name attribute1 attribute2>
+				....content
+				</element-name>
+				</code></pre>
+				<p>where</p>
+				  <ul>
+				     <li><strong>element-name<strong> is the name of the element. The name its case in the start and end tags must match.</li>
+				     <li>attribute1, attribute2 are attributes of the element separated by white spaces. An attribute defines a property of the element. It associates a name with a value, which is a string of characters. An attribute is written as:</li>
+				           <pre><code data-trim contenteditable>
+                                           name = "value"
+				           </code></pre>
+				    <p><em>name</em> is followed by an = sign and a string value inside double(" ") or single(' ') quotes.</p>
+				  </ul>
+				</ul>
+			</section>
+
+			<section>		
+				<h2>XML - Elements II</h2>
+				<ul>
+				<p><strong>Nesting of elements</strong>: An XML-element can contain multiple XML-elements as its children, but the children elements must not overlap. i.e., an end tag of an element must have the same name as that of the most recent unmatched start tag.
+				<pre><code data-trim contenteditable>
+				<?xml version="1.0"?>
+				<contact-info>
+				<company>University of Colorado Boulder</company>
+				<contact-info>
+				</code></pre>
+
+				<p><strong>Root element</strong>: An XML document can have only one root element. 
+				</ul>
+			</section>
+
+
+			<section>		
+				<h2>XML - Elements III</h2>
+				<ul>
+				<p>Following rules are required to be followed for XML elements:</p>
+				<li>An element name can contain any alphanumeric characters. The only punctuation mark allowed in names are the hyphen (-), under-score (_) and period (.).</li>
+				<li>Names are case sensitive. For example, Address, address, and ADDRESS are different names.</li>
+				<li>Start and end tags of an element must be identical.</li>
+				<li>An element, which is a container, can contain text or elements as seen in the above example.</li>
+				</ul>
+			</section>
+
+
+			<section>		
+				<h2>XML - Attributes</h2>
+				<ul>
+				<p>An XML attribute has following syntax:</p>
+				<pre><code data-trim contenteditable>
+				<element-name attribute1 attribute2 >
+				....content..
+				< /element-name>
+				</code></pre>
+				<p>where attribute1 and attribute2 has the following form:</p>
+				<pre><code data-trim contenteditable>
+                                name = "value"
+				</code></pre>
+				<p>value has to be in double (" ") or single (' ') quotes. Here, attribute1 and attribute2 are unique attribute labels.</p>
+				<p>Following are the rules that need to be followed for attributes:</p>
+				<li>An attribute name must not appear more than once in the same start-tag or empty-element tag.</li>
+				<li>An attribute must be declared in the Document Type Definition (DTD) using an Attribute-List Declaration.</li>
+				<li>Attribute values must not contain direct or indirect entity references to external entities.</li>
+				<li>The replacement text of any entity referred to directly or indirectly in an attribute value must not contain either less than sign <</li>
+				</ul>
+			</section>
+
+
+			<section>		
+				<h2>XML Attributes â€“ Example</h2>
+				<ul>
+				<p>Attributes are used to add a unique label to an element, place the label in a category, add a Boolean flag, or otherwise associate it with some string of data. Following example demonstrates the use of attributes:</p>
+				<pre><code data-trim contenteditable>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE garden [
+   <!ELEMENT garden (plants)*>
+   <!ELEMENT plants (#PCDATA)>
+   <!ATTLIST plants category CDATA #REQUIRED>
+]>
+<garden>
+   <plants category="flowers" />
+   <plants category="shrubs">
+   </plants>
+</garden>
+				</code></pre>
+
+				<p>Attributes are used to distinguish among elements of the same name. When you do not want to create a new element for every situation. Hence, use of an attribute can add a little more detail in differentiating two or more similar elements.</p>
+				<p>In the above example, we have categorized the plants by including attribute category and assigning different values to each of the elements. Hence we have two categories of plants, one flowers and other color. Hence we have two plant elements with different attributes.</p>
+				</ul>
 			</section>
 
 
@@ -134,7 +340,7 @@
   					</tr>
   					<tr>
     						<td>Single quote</td>
-    						<td>& apôs</td>
+    						<td>& apÃ´s</td>
   					</tr>
   					<tr>
     						<td>Greater than</td>
@@ -360,7 +566,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 <h2>XML-DTD(3)</h2>
 <p>Rules:</p>
 <ul>
-<li>The document type declaration must appear at the start of the document (preceded only by the XML header) — it is not permitted anywhere else within the document.</li>
+<li>The document type declaration must appear at the start of the document (preceded only by the XML header) Â— it is not permitted anywhere else within the document.</li>
 <li>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark.</li>
 <li>The Name in the document type declaration must match the element type of the root element.</li>
 </ul>
