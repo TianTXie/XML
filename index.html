@@ -154,7 +154,7 @@
 
 
 				<section>
-					<h2>XML - White Spaces</h2>
+					<h2>XML - White Spaces(1)</h2>
 					<pre><p>Whitespace is a collection of spaces, tabs, and newlines. They are generally used to make a document more readable.</p></pre>
 					<p>XML document contain two types of white spaces:
 						<ul>
@@ -194,7 +194,7 @@
 		</section>
 
 		<section>
-			<h2>XML - Processing</h2>
+			<h2>XML - Processing(1)</h2>
 			<pre>
 				<p>"Processing instructions (PIs) allow documents to contain instructions for applications. PIs are not part of the character data of the document, but MUST be passed through to the application.</p>
 			</pre>
@@ -214,7 +214,7 @@
 
 		</section>
 <section>
-	<h2>XML - Processing(example)</h2>
+	<h2>XML - Processing(2)</h2>
 	<pre>
 	<code data-trim contenteditable><?xml-stylesheet href="tutorialspointstyle.css" type="text/css"?></code>
 </pre>
@@ -226,7 +226,7 @@ In this case, a browser recognizes the target by indicating that the XML should 
 
 
 <section>
-	<h2>XML - Processing(Rules)</h2>
+	<h2>XML - Processing(3)</h2>
 	<p>A PI can contain any data except the combination ?>, which is interpreted as the closing delimiter. Here are two examples of valid PIs:</p>
 <pre>
 <code data-trim contenteditable>
@@ -239,7 +239,7 @@ In this case, a browser recognizes the target by indicating that the XML should 
 </section>
 
 <section>
-	<h2>XML-Encoding</h2>
+	<h2>XML-Encoding(1)</h2>
 	<pre>
 Encoding is the process of converting unicode characters into their equivalent binary representation. When the XML processor reads an XML document, it encodes the document depending on the type of encoding.
 	</pre>
@@ -280,7 +280,7 @@ Encoding is the process of converting unicode characters into their equivalent b
 </section>
 
 <section>
-	<h2>XML-Encoding(exampe)</h2>
+	<h2>XML-Encoding(3)</h2>
 	<pre>
 		<code data-trim contentEditable>
 			<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
@@ -294,7 +294,7 @@ Encoding is the process of converting unicode characters into their equivalent b
 </section>
 
 <section>
-	<h2>XML-Validation</h2>
+	<h2>XML-Validation(1)</h2>
 	<pre>
 Validation is a process by which an XML document is validated. An XML document is said to be valid if its contents match with the elements, attributes and associated document type declaration(DTD), and if the document complies with the constraints expressed in it. Validation is dealt in two ways by the XML parser. They are:
 <li>Well-formed XML document
@@ -352,6 +352,144 @@ Above example is said to be well-formed as:
 <section>
 	<h2>XML-Validation(4)</h2>
 	<p>If an XML document is well-formed and has an associated Document Type Declaration (DTD), then it is said to be a valid XML document. </p>
+</section>
+
+<section>
+	<h2>XML-DTD(1)</h2>
+	<pre>
+The purpose of a DTD is to define the structure of an XML document. It defines the structure with a list of legal elements:
+	</pre>
+	<pre>
+<code data-trim contenteditable>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE note[<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+</code>
+	</pre>
+
+</section>
+
+<section>
+	<h2>XML-DTD(2)</h2>
+<p>The DTD in the above page is interpreted like this:</p>
+<ul>
+	<li>!DOCTYPE note defines that the root element of the document is note</li>
+	<li>!ELEMENT note defines that the note element must contain the elements: "to, from, heading, body"</li>
+	<li>!ELEMENT to defines the to element to be of type "#PCDATA"</li>
+	<li>!ELEMENT from defines the from element to be of type "#PCDATA"</li>
+	<li>!ELEMENT heading defines the heading element to be of type "#PCDATA"</li>
+	<li>!ELEMENT body defines the body element to be of type "#PCDATA"</li>
+</ul>
+</section>
+
+<section>
+<h2>XML-DTD(3)</h2>
+<p>Rules:</p>
+<ul>
+<li>The document type declaration must appear at the start of the document (preceded only by the XML header) — it is not permitted anywhere else within the document.</li>
+<li>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark.</li>
+<li>The Name in the document type declaration must match the element type of the root element.</li>
+</ul>
+</section>
+
+<section>
+<h2>XML-DTD(4)</h2>
+<pre>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal .dtd file or a valid URL. To refer it as external DTD, standalone attribute in the XML declaration must be set as no. This means, declaration includes information from the external source.</pre>
+<pre>
+<code data-trim contenteditable>
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+<to>Amy</to>
+<from>Elsa</from>
+<heading>Reminder</heading>
+<body>Don't forget the due day</body>
+</note>
+</code>
+</pre>
+
+</section>
+
+<section>
+<h2>XML-Schemas(1)</h2>
+<pre>XML schema is used to describe and validate the structure and the content of XML data</pre>
+<p>
+<strong>Simple Type</strong> - Simple type element is used only in the context of the text. Some of predefined simple types are: xs:integer, xs:boolean, xs:string, xs:date. For example:</p>
+<pre>
+	<code data-trim contenteditable>
+		<xs:element name="phone_number" type="xs:int" />
+	</code>
+</pre>
+</section>
+
+<section>
+<h2>XML-Schemas(2)</h2>
+<p><strong>Complex Type</strong> - A complex type is a container for other element definitions. This allows to specify which child elements an element can contain and to provide some structure within the XML documents. </p>
+<pre>
+	<code data-trim contenteditable>
+		<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="contact">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="company" type="xs:string" />
+            <xs:element name="phone" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+</code>
+</pre>
+</section>
+
+<section>
+<h2>XML-Schemas(3)</h2>
+<p><strong>Global Types</strong> - With global type, a single type is defined in document, which can be used by all other references. For example:</p>
+<pre>
+	<code data-trim contenteditable>
+		<xs:element name="AddressType">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+	    <xs:element name="company" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+	</code>
+</pre>
+<p>Here, we defined a general type <em>name</em> and <em>company</em>.</p>
+</section>
+
+<section>
+	<h2>XML-Schemas(4)</h2>
+	<pre>
+		<code data-trim contenteditable>
+			<xs:element name="Address1">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="address" type="AddressType" />
+	    <xs:element name="phone1" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+<xs:element name="Address2">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="address" type="AddressType" />
+	    <xs:element name="phone2" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+		</code>
+	</pre>
+	<p>
+Now, we can use <em>name</em> and <em>company</em> without define them twice.
+</p>
 </section>
 
 
