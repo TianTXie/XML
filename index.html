@@ -238,42 +238,394 @@
 
 				<section>
 					<h2>XML - Comments</h2>
-<p>The comments are added as notes or lines for understanding the purpose of an XML code.</p>
-					<p> Syntax :</p>
-<p> <xmp> <!----Your comment----></xmp></p>
-<h3>Rules:</h3>
-
-</ul>
-
-  <li>Comments cannot appear before XML declaration.</li>
-	<li>Comments may appear anywhere in a document.</li>
-	<li>Comments must not appear within attribute values.</li>
-	<li>Comments cannot be nested inside the other comments.</li>
-<ul>
-
+					<pre><p>The comments are added as notes or lines for understanding the purpose of an XML code.</p></pre>
+					<pre><code data-trim contenteditable> Syntax :<!----Your comment----></code></pre>
+					<p>Rules:</p>
+					<ul>
+  				<li>Comments cannot appear before XML declaration.</li>
+					<li>Comments may appear anywhere in a document.</li>
+					<li>Comments must not appear within attribute values.</li>
+					<li>Comments cannot be nested inside the other comments.</li>
+					</ul>
 				</section>
+
+				<section>
+				<h2>XML - CDATA Sections</h2>
+				<pre><p>CDATA are defined as blocks of text that are not parsed by the parser, but are otherwise recognized as markup.</p></pre>
+				<pre> <code data-trim contenteditable>
+						<![CDATA[<message> XML </message>]] >
+					</code>
+				</pre>
+				<p>In the above syntax, everthing between <message> and </message> is treated as character data and not as markup.</p>
+  			</section>
 
 				<section>
 					<h2>XML - Character Entities</h2>
 					<p>Character Entities are used to display special characters.</p>
-					<p>Types of Character Entities</p>
-          <ul>
-            <li>Predefined Character Entities</li>
-            <li>Numbered Character Entites</li>
-            <li>Named Character Entities
+					<table style="width:50%">
+  					<tr>
+    						<td>Ampersande</td>
+    						<td>& amp</td>
+  					</tr>
+  					<tr>
+    						<td>Single quote</td>
+    						<td>& apôs</td>
+  					</tr>
+  					<tr>
+    						<td>Greater than</td>
+    						<td>& gt</td>
+  						</tr>
+  						<tr>
+    						<td>Less than</td>
+    						<td>& lt</td>
+  							</tr>
+  							<tr>
+    							<td>Double quote</td>
+    							<td>& quot</td>
+  								</tr>
+									</table>
+								</section>
 
-            </li>
-          </ul>
+
+				<section>
+					<h2>XML - White Spaces(1)</h2>
+					<pre><p>Whitespace is a collection of spaces, tabs, and newlines. They are generally used to make a document more readable.</p></pre>
+					<p>XML document contain two types of white spaces:
+						<ul>
+						<li>
+						(a) Significant Whitespace  </li><br>
+						<li>
+						(b) Insignificant Whitespace. Both are explained below with examples.</p>
+					</li>
+				</ul>
 				</section>
 
 				<section>
-					<h2>XML - Character Entities(2)</h2>
-					<h4>Predefined Character Entities</h4>
-					
-          <ul>
+		<h2>XML - White Spaces(2)</h2>
+		<pre>
+			<code data-trim contenteditable>
+		<name>TanmayPatil</name> and <name>Tanmay Patil</name>
+	</code>
+		</pre>
+		<p>The above two elements are different because of the space between <strong>Tanmay</strong> and <strong>Patil</strong>. Any program reading this element in an XML file is obliged to maintain the distinction.</p>
+		</section>
 
-          </ul>
-				</section>
+		<section>
+			<h2>XML - White Spaces(3)</h2>
+<p>Insignificant whitespace means the space where only element content is allowed. For example:</p>
+<pre>
+	<code data-trim contenteditable><address.category="residence"> and <address....category="..residence"></code></pre>
+<p>These two examples are same. Here, the space is represented by dots (.).
+	The space between address and category is insignificant.</p>
+		</section>
+
+		<section>
+			<h2>XML - White Spaces(4)</h2>
+			<p>A special attribute named xml:space may be attached to an element. This indicates that whitespace should not be removed for that element by the application. You can set this attribute to default or preserve as shown in the example below:</p>
+			<pre>
+				<code data-trim contenteditable><!ATTLIST address  xml:space (default|preserve) 'preserve'></code>
+			</pre>
+		</section>
+
+		<section>
+			<h2>XML - Processing(1)</h2>
+			<pre>
+				<p>"Processing instructions (PIs) allow documents to contain instructions for applications. PIs are not part of the character data of the document, but MUST be passed through to the application.</p>
+			</pre>
+			<pre>
+			<code data-trim contenteditable>Syntax:<?target instructions?></code>
+		</pre>
+			<ul>
+				<li><strong>target</strong> - identifies the application to which the instruction is directed.<br>
+			</li>
+		</ul>
+		<ul>
+				<li><strong>instruction</strong> - it is a character that describes the information for the application to process.</li>
+</ul>
+			</p>
+
+			</p>
+
+		</section>
+<section>
+	<h2>XML - Processing(2)</h2>
+	<pre>
+	<code data-trim contenteditable><?xml-stylesheet href="tutorialspointstyle.css" type="text/css"?></code>
+</pre>
+	<pre>Here, the target is xml-stylesheet. href="tutorialspointstyle.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
+
+In this case, a browser recognizes the target by indicating that the XML should be transformed before being shown; the first attribute states that the type of the transform is XSL and the second attribute points to its location.</pre>
+</section>
+
+
+
+<section>
+	<h2>XML - Processing(3)</h2>
+	<p>A PI can contain any data except the combination ?>, which is interpreted as the closing delimiter. Here are two examples of valid PIs:</p>
+<pre>
+<code data-trim contenteditable>
+
+	<?welcome to pg=10 of tutorials point?><br>
+
+	<?welcome?>
+</code>
+</pre>
+</section>
+
+<section>
+	<h2>XML-Encoding(1)</h2>
+	<pre>
+Encoding is the process of converting unicode characters into their equivalent binary representation. When the XML processor reads an XML document, it encodes the document depending on the type of encoding.
+	</pre>
+	<p style="text-align:left">
+		Encoding Types:
+		<ul>
+		<li>
+			UTF-8
+		</li>
+		<li>
+			UTF-16
+		</li>
+	</ul>
+	</p>
+	<p style="font-size:60%">
+		UTF stands for UCS Transformation Format, and UCS itself means Universal Character Set. The number 8 or 16 refers to the number of bits used to represent a character. They are either 8(one byte) or 16(two bytes). For the documents without encoding information, UTF-8 is set by default.
+	</p>
+</section>
+
+<section>
+		<h2>XML-Encoding(2)</h2>
+		<p>
+			The syntax for UTF-8 encoding is below:
+			<pre>
+			<code data-trim contentEditable>
+				<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+			</code>
+		</pre>
+		</p>
+		<p>
+			The syntax for UTF-16 encoding is below:
+			<pre>
+			<code data-trim contentEditable>
+				<?xml version="1.0" encoding="UTF-16" standalone="no" ?>
+			</code>
+		</pre>
+		</p>
+</section>
+
+<section>
+	<h2>XML-Encoding(3)</h2>
+	<pre>
+		<code data-trim contentEditable>
+			<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<contact-info>
+   <name>Amy</name>
+   <company>University of Colorado, Boulder</company>
+   <phone>(011) 123-4567</phone>
+</contact-info>
+		</code>
+	</pre>
+</section>
+
+<section>
+	<h2>XML-Validation(1)</h2>
+	<pre>
+Validation is a process by which an XML document is validated. An XML document is said to be valid if its contents match with the elements, attributes and associated document type declaration(DTD), and if the document complies with the constraints expressed in it. Validation is dealt in two ways by the XML parser. They are:
+<li>Well-formed XML document
+</li>
+<li>Valid XML document
+</li>
+	</pre>
+</section>
+
+<section>
+	<h2>XML-Validation(2)</h2>
+	<p>
+		An XML document is said to be <strong>well-formed</strong> if it adheres to the following rules:
+	</p>
+	<pre>
+
+<li>Non DTD XML files must use the predefined character entities for <strong>amp</strong>(&),<strong> apos</strong>(single quote), <strong>gt</strong>(>), <strong>lt</strong>(<), <strong>quot</strong>(double quote).</li>
+<li>It must follow the ordering of the tag. i.e., the inner tag must be closed before closing the outer tag.</li>
+<li>Each of its opening tags must have a closing tag or it must be a self ending tag.</li>
+<li>It must have only one attribute in a start tag, which needs to be quoted.</li>
+<li><strong>amp</strong>(&), <strong>apos</strong>(single quote), <strong>gt</strong>(>), <strong>lt</strong>(<), <strong>quot</strong>(double quote) entities other than these must be declared.</li>
+
+
+</section>
+
+<section>
+	<h2>XML-Validation(3)</h2>
+	<pre>
+		<code data-trim contenteditable>
+			<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE address
+[
+   <!ELEMENT address (name,company,phone)>
+   <!ELEMENT name (#PCDATA)>
+   <!ELEMENT company (#PCDATA)>
+   <!ELEMENT phone (#PCDATA)>
+]>
+<address>
+   <name> Amy</name>
+   <company>University of colorado, Boulder</company>
+   <phone>(011) 123-4567</phone>
+</address>
+		</code>
+	</pre>
+
+<pre>
+Above example is said to be well-formed as:
+(1)It defines the type of document. Here, the document type is element type.
+(2)It includes a root element named as address.
+(3)Each of the child elements among name, company and phone is enclosed in its self explanatory tag.
+(4)Order of the tags is maintained.
+</pre>
+</section>
+
+<section>
+	<h2>XML-Validation(4)</h2>
+	<p>If an XML document is well-formed and has an associated Document Type Declaration (DTD), then it is said to be a valid XML document. </p>
+</section>
+
+<section>
+	<h2>XML-DTD(1)</h2>
+	<pre>
+The purpose of a DTD is to define the structure of an XML document. It defines the structure with a list of legal elements:
+	</pre>
+	<pre>
+<code data-trim contenteditable>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE note[<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+</code>
+	</pre>
+
+</section>
+
+<section>
+	<h2>XML-DTD(2)</h2>
+<p>The DTD in the above page is interpreted like this:</p>
+<ul>
+	<li>!DOCTYPE note defines that the root element of the document is note</li>
+	<li>!ELEMENT note defines that the note element must contain the elements: "to, from, heading, body"</li>
+	<li>!ELEMENT to defines the to element to be of type "#PCDATA"</li>
+	<li>!ELEMENT from defines the from element to be of type "#PCDATA"</li>
+	<li>!ELEMENT heading defines the heading element to be of type "#PCDATA"</li>
+	<li>!ELEMENT body defines the body element to be of type "#PCDATA"</li>
+</ul>
+</section>
+
+<section>
+<h2>XML-DTD(3)</h2>
+<p>Rules:</p>
+<ul>
+<li>The document type declaration must appear at the start of the document (preceded only by the XML header) — it is not permitted anywhere else within the document.</li>
+<li>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark.</li>
+<li>The Name in the document type declaration must match the element type of the root element.</li>
+</ul>
+</section>
+
+<section>
+<h2>XML-DTD(4)</h2>
+<pre>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal .dtd file or a valid URL. To refer it as external DTD, standalone attribute in the XML declaration must be set as no. This means, declaration includes information from the external source.</pre>
+<pre>
+<code data-trim contenteditable>
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+<to>Amy</to>
+<from>Elsa</from>
+<heading>Reminder</heading>
+<body>Don't forget the due day</body>
+</note>
+</code>
+</pre>
+
+</section>
+
+<section>
+<h2>XML-Schemas(1)</h2>
+<pre>XML schema is used to describe and validate the structure and the content of XML data</pre>
+<p>
+<strong>Simple Type</strong> - Simple type element is used only in the context of the text. Some of predefined simple types are: xs:integer, xs:boolean, xs:string, xs:date. For example:</p>
+<pre>
+	<code data-trim contenteditable>
+		<xs:element name="phone_number" type="xs:int" />
+	</code>
+</pre>
+</section>
+
+<section>
+<h2>XML-Schemas(2)</h2>
+<p><strong>Complex Type</strong> - A complex type is a container for other element definitions. This allows to specify which child elements an element can contain and to provide some structure within the XML documents. </p>
+<pre>
+	<code data-trim contenteditable>
+		<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="contact">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="company" type="xs:string" />
+            <xs:element name="phone" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+</code>
+</pre>
+</section>
+
+<section>
+<h2>XML-Schemas(3)</h2>
+<p><strong>Global Types</strong> - With global type, a single type is defined in document, which can be used by all other references. For example:</p>
+<pre>
+	<code data-trim contenteditable>
+		<xs:element name="AddressType">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+	    <xs:element name="company" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+	</code>
+</pre>
+<p>Here, we defined a general type <em>name</em> and <em>company</em>.</p>
+</section>
+
+<section>
+	<h2>XML-Schemas(4)</h2>
+	<pre>
+		<code data-trim contenteditable>
+			<xs:element name="Address1">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="address" type="AddressType" />
+	    <xs:element name="phone1" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+<xs:element name="Address2">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="address" type="AddressType" />
+	    <xs:element name="phone2" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+		</code>
+	</pre>
+	<p>
+Now, we can use <em>name</em> and <em>company</em> without define them twice.
+</p>
+</section>
+
 
 				<section>
 					<h2>Explanation (3)</h2>
