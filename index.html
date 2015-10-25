@@ -87,152 +87,18 @@
 
 
 			<section>
-		
-				<h2>XML - Syntax I</h2>
-				<p>Following is a complete XML document:</p>
-				<pre><code data-trim contenteditable>
-					<?xml version="1.0"?>
-					<contact-info>
-					<name>Sophy Zhou</name>
-					<company>University of Colorado Boulder</company>
-					<phone>(011) 123-4567</phone>
-					</contact-info>
-				</code></pre>
+<h2>XML - Syntax I</h2>
+<p>Following is a complete XML document:</p>
+<pre><code data-trim contenteditable>
+<?xml version="1.0"?>
+<contact-info>
+<name>Sophy Zhou</name>
+<company>University of Colorado Boulder</company>
+<phone>(011) 123-4567</phone>
+</contact-info>
+</code></pre>
 
 			</section>
-
-
-			<section>
-		
-				<h2>XML - Syntax II</h2>
-				<p>A XML document generally consists of two parts: </p>
-				<ul>
-				<li><strong>Document Prolog Section</strong>: The document prolog comes at the top of the document, before the root element. This section contains:</li>
-					<ul>			
-						<li>XML declaration</li>
-						<li>Document type declaration</li>
-					<ul>
-
-				<li><strong>Document Elements Section</strong>:Document Elements are the building blocks of XML. These divide the document into a hierarchy of sections, each serving a specific purpose. You can separate a document into multiple sections so that they can be rendered differently, or used by a search engine. The elements can be containers, with a combination of text and other elements.</li>
-				</ul>
-
-			</section>
-
-			<section>
-		
-				<h2>XML - Syntax III</h2>
-				<ul>
-				<p>The following diagram depicts the syntax rules to write different types of markup and text in an XML document.</p>
-				</ul>
-
-			</section>
-
-			<section>
-		
-				<h2>XML - Declaration I</h2>
-				<ul>
-				<p>The XML document can optionally have an XML declaration. It is written as below:</p>
-				<pre><code data-trim contenteditable>
-				<?xml
- 				  version="version_number"
-   				  encoding="encoding_declaration"
-	        		  standalone="standalone_status"
-                                ?>
-				</code></pre>
-				<p>Where <em>version</em> is the XML version and <em>encoding</em> specifies the character encoding used in the document.</p>
-
-				<p><strong>Syntax Rules for XML declaration</strong></p>
-				<li>The XML declaration is case sensitive.</li>
-				<li>If document contains XML declaration, then it strictly needs to be the first statement of the XML document.</li>
-				<li>The XML declaration strictly needs be the first statement in the XML document.</li>
-				<li>An HTTP protocol can override the value of encoding that you put in the XML declaration.</li>
-				</ul>
-
-			</section>
-
-
-			<section>
-		
-				<h2>XML - Declaration II</h2>
-				<ul>
-				<p>Following are few examples of XML declarations:</p>
-				<li>XML declaration with no parameters:</li>
-		   			<pre><code data-trim contenteditable>
-					<?xml >
-					</code></pre>
-				<li>XML declaration with version definition:</li>
-					<pre><code data-trim contenteditable>
-					<?xml version="1.0">
-					</code></pre>
-				<li>XML declaration with all parameters defined:</li>
-					<pre><code data-trim contenteditable>
-					<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-					</code></pre>
-				<li>XML declaration with all parameters defined in single quotes:</li>
-					<pre><code data-trim contenteditable>
-					<?xml version='1.0' encoding='iso-8859-1' standalone='no' ?>
-					</code></pre>
-
-				</ul>
-
-			</section>
-
-
-			<section>		
-				<h2>XML - Tags I</h2>
-				<ul>
-				<p><strong>Start Tag</strong>: The beginning of every non-empty XML element is marked by a start-tag. An example of start-tag is:</p>
-				<pre><code data-trim contenteditable>
-				<address>
-				</code></pre>
-				<p><strong>End Tag</strong>: Every element that has a start tag should end with an end-tag. An example of end-tag is:</P>
-				<pre><code data-trim contenteditable>
-				</address>
-				</code></pre>
-				<p><strong>Empty Tag</strong>: The text that appears between start-tag and end-tag is called content. An element which has no content is termed as empty. An empty element can be represented in two ways as below:</p>
-				<li>A start-tag immediately followed by an end-tag as shown below:</li>
-				<pre><code data-trim contenteditable>
-				<hr></hr>
-				</code></pre>
-				<li>A complete empty-element tag is as shown below:</li>
-				<pre><code data-trim contenteditable>
-				<hr />
-				</code></pre>
-				<p>Empty-element tags may be used for any element which has no content.</p>
-				</ul>
-			</section>
-
-			<section>		
-				<h2>XML - Tags II</h2>
-				<ul>
-				<p>XML Tags Rules</p>
-				<li>Rule 1: XML tags are case-sensitive. </li>
-				<li>Rule 2: XML tags must be closed in an appropriate order, i.e., an XML tag opened inside another element must be closed before the outer element is closed.</li>
-				</ul>
-			</section>
-
-			<section>		
-				<h2>XML - Elements</h2>
-				<ul>
-				<p>Following is the syntax to write an XML element:</p>
-				<pre><code data-trim contenteditable>
-				<element-name attribute1 attribute2>
-				....content
-				</element-name>
-				</code></pre>
-				<p>where</p>
-				  <ul>
-				     <li><strong>element-name<strong> is the name of the element. The name its case in the start and end tags must match.</li>
-				     <li>attribute1, attribute2 are attributes of the element separated by white spaces. An attribute defines a property of the element. It associates a name with a value, which is a string of characters. An attribute is written as:</li>
-				           <pre><code data-trim contenteditable>
-                                           name = "value"
-				           </code></pre>
-				    <p><em>name</em> is followed by an = sign and a string value inside double(" ") or single(' ') quotes.</p>
-				  </ul>
-				</ul>
-			</section>
-
-
 
 
 
@@ -253,11 +119,11 @@
 				<h2>XML - CDATA Sections</h2>
 				<pre><p>CDATA are defined as blocks of text that are not parsed by the parser, but are otherwise recognized as markup.</p></pre>
 				<pre> <code data-trim contenteditable>
-
-				</code></pre>
+						<![CDATA[<message> XML </message>]] >
+					</code>
+				</pre>
 				<p>In the above syntax, everthing between <message> and </message> is treated as character data and not as markup.</p>
-  			        </section>
-
+  			</section>
 				<section>
 					<h2>XML - Character Entities</h2>
 					<p>Character Entities are used to display special characters.</p>
@@ -268,7 +134,7 @@
   					</tr>
   					<tr>
     						<td>Single quote</td>
-    						<td>& apÃ´s</td>
+    						<td>& apôs</td>
   					</tr>
   					<tr>
     						<td>Greater than</td>
@@ -284,8 +150,6 @@
   								</tr>
 									</table>
 								</section>
-
-
 				<section>
 					<h2>XML - White Spaces(1)</h2>
 					<pre><p>Whitespace is a collection of spaces, tabs, and newlines. They are generally used to make a document more readable.</p></pre>
@@ -298,7 +162,6 @@
 					</li>
 				</ul>
 				</section>
-
 				<section>
 		<h2>XML - White Spaces(2)</h2>
 		<pre>
@@ -308,7 +171,6 @@
 		</pre>
 		<p>The above two elements are different because of the space between <strong>Tanmay</strong> and <strong>Patil</strong>. Any program reading this element in an XML file is obliged to maintain the distinction.</p>
 		</section>
-
 		<section>
 			<h2>XML - White Spaces(3)</h2>
 <p>Insignificant whitespace means the space where only element content is allowed. For example:</p>
@@ -317,7 +179,6 @@
 <p>These two examples are same. Here, the space is represented by dots (.).
 	The space between address and category is insignificant.</p>
 		</section>
-
 		<section>
 			<h2>XML - White Spaces(4)</h2>
 			<p>A special attribute named xml:space may be attached to an element. This indicates that whitespace should not be removed for that element by the application. You can set this attribute to default or preserve as shown in the example below:</p>
@@ -325,7 +186,6 @@
 				<code data-trim contenteditable><!ATTLIST address  xml:space (default|preserve) 'preserve'></code>
 			</pre>
 		</section>
-
 		<section>
 			<h2>XML - Processing(1)</h2>
 			<pre>
@@ -342,9 +202,7 @@
 				<li><strong>instruction</strong> - it is a character that describes the information for the application to process.</li>
 </ul>
 			</p>
-
 			</p>
-
 		</section>
 <section>
 	<h2>XML - Processing(2)</h2>
@@ -352,25 +210,18 @@
 	<code data-trim contenteditable><?xml-stylesheet href="tutorialspointstyle.css" type="text/css"?></code>
 </pre>
 	<pre>Here, the target is xml-stylesheet. href="tutorialspointstyle.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
-
 In this case, a browser recognizes the target by indicating that the XML should be transformed before being shown; the first attribute states that the type of the transform is XSL and the second attribute points to its location.</pre>
 </section>
-
-
-
 <section>
 	<h2>XML - Processing(3)</h2>
 	<p>A PI can contain any data except the combination ?>, which is interpreted as the closing delimiter. Here are two examples of valid PIs:</p>
 <pre>
 <code data-trim contenteditable>
-
 	<?welcome to pg=10 of tutorials point?><br>
-
 	<?welcome?>
 </code>
 </pre>
 </section>
-
 <section>
 	<h2>XML-Encoding(1)</h2>
 	<pre>
@@ -391,7 +242,6 @@ Encoding is the process of converting unicode characters into their equivalent b
 		UTF stands for UCS Transformation Format, and UCS itself means Universal Character Set. The number 8 or 16 refers to the number of bits used to represent a character. They are either 8(one byte) or 16(two bytes). For the documents without encoding information, UTF-8 is set by default.
 	</p>
 </section>
-
 <section>
 		<h2>XML-Encoding(2)</h2>
 		<p>
@@ -411,7 +261,6 @@ Encoding is the process of converting unicode characters into their equivalent b
 		</pre>
 		</p>
 </section>
-
 <section>
 	<h2>XML-Encoding(3)</h2>
 	<pre>
@@ -425,7 +274,6 @@ Encoding is the process of converting unicode characters into their equivalent b
 		</code>
 	</pre>
 </section>
-
 <section>
 	<h2>XML-Validation(1)</h2>
 	<pre>
@@ -436,23 +284,18 @@ Validation is a process by which an XML document is validated. An XML document i
 </li>
 	</pre>
 </section>
-
 <section>
 	<h2>XML-Validation(2)</h2>
 	<p>
 		An XML document is said to be <strong>well-formed</strong> if it adheres to the following rules:
 	</p>
 	<pre>
-
 <li>Non DTD XML files must use the predefined character entities for <strong>amp</strong>(&),<strong> apos</strong>(single quote), <strong>gt</strong>(>), <strong>lt</strong>(<), <strong>quot</strong>(double quote).</li>
 <li>It must follow the ordering of the tag. i.e., the inner tag must be closed before closing the outer tag.</li>
 <li>Each of its opening tags must have a closing tag or it must be a self ending tag.</li>
 <li>It must have only one attribute in a start tag, which needs to be quoted.</li>
 <li><strong>amp</strong>(&), <strong>apos</strong>(single quote), <strong>gt</strong>(>), <strong>lt</strong>(<), <strong>quot</strong>(double quote) entities other than these must be declared.</li>
-
-
 </section>
-
 <section>
 	<h2>XML-Validation(3)</h2>
 	<pre>
@@ -472,7 +315,6 @@ Validation is a process by which an XML document is validated. An XML document i
 </address>
 		</code>
 	</pre>
-
 <pre>
 Above example is said to be well-formed as:
 (1)It defines the type of document. Here, the document type is element type.
@@ -481,12 +323,10 @@ Above example is said to be well-formed as:
 (4)Order of the tags is maintained.
 </pre>
 </section>
-
 <section>
 	<h2>XML-Validation(4)</h2>
 	<p>If an XML document is well-formed and has an associated Document Type Declaration (DTD), then it is said to be a valid XML document. </p>
 </section>
-
 <section>
 	<h2>XML-DTD(1)</h2>
 	<pre>
@@ -503,9 +343,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 ]>
 </code>
 	</pre>
-
 </section>
-
 <section>
 	<h2>XML-DTD(2)</h2>
 <p>The DTD in the above page is interpreted like this:</p>
@@ -518,17 +356,15 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 	<li>!ELEMENT body defines the body element to be of type "#PCDATA"</li>
 </ul>
 </section>
-
 <section>
 <h2>XML-DTD(3)</h2>
 <p>Rules:</p>
 <ul>
-<li>The document type declaration must appear at the start of the document (preceded only by the XML header) â€” it is not permitted anywhere else within the document.</li>
+<li>The document type declaration must appear at the start of the document (preceded only by the XML header) — it is not permitted anywhere else within the document.</li>
 <li>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark.</li>
 <li>The Name in the document type declaration must match the element type of the root element.</li>
 </ul>
 </section>
-
 <section>
 <h2>XML-DTD(4)</h2>
 <pre>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal .dtd file or a valid URL. To refer it as external DTD, standalone attribute in the XML declaration must be set as no. This means, declaration includes information from the external source.</pre>
@@ -544,9 +380,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 </note>
 </code>
 </pre>
-
 </section>
-
 <section>
 <h2>XML-Schemas(1)</h2>
 <pre>XML schema is used to describe and validate the structure and the content of XML data</pre>
@@ -558,7 +392,6 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 	</code>
 </pre>
 </section>
-
 <section>
 <h2>XML-Schemas(2)</h2>
 <p><strong>Complex Type</strong> - A complex type is a container for other element definitions. This allows to specify which child elements an element can contain and to provide some structure within the XML documents. </p>
@@ -579,7 +412,6 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 </code>
 </pre>
 </section>
-
 <section>
 <h2>XML-Schemas(3)</h2>
 <p><strong>Global Types</strong> - With global type, a single type is defined in document, which can be used by all other references. For example:</p>
@@ -597,7 +429,6 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 </pre>
 <p>Here, we defined a general type <em>name</em> and <em>company</em>.</p>
 </section>
-
 <section>
 	<h2>XML-Schemas(4)</h2>
 	<pre>
@@ -624,8 +455,6 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 Now, we can use <em>name</em> and <em>company</em> without define them twice.
 </p>
 </section>
-
-
 				<section>
 					<h2>Explanation (3)</h2>
 					<pre><code data-trim contenteditable>
@@ -644,7 +473,6 @@ function (req, res) {
 						<li>This particular function ignores all input and generates a simple HTTP response.</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Explanation (4)</h2>
 					<pre><code data-trim contenteditable>
@@ -654,7 +482,6 @@ console.log('Server running at http://127.0.0.1:1337/');
 						<li><strong>console.log()</strong> is the <strong>printf()</strong> of the Javascript world.</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Explanation (5)</h2>
 					<p>Our program in abstract form</p>
@@ -672,7 +499,6 @@ console.log('Server running at http://127.0.0.1:1337/');
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Event Loop?</h2>
 					<ul>
@@ -684,7 +510,6 @@ console.log('Server running at http://127.0.0.1:1337/');
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Event Loop (1)</h2>
 					<p>The basic structure of all Node.js programs</p>
@@ -696,7 +521,6 @@ while (there are events to be handled) {
 					<p>This is how GUI programs are written.</p>
 					<p>"If user click here, do this."</p>
 				</section>
-
 				<section>
 					<h2>Event Loop (2)</h2>
 					<ul>
@@ -712,7 +536,6 @@ while (there are events to be handled) {
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Event Loop (3) &mdash; process.nextTick()</h2>
 					<p>A simple example using process.nextTick()</p>
@@ -730,7 +553,6 @@ console.log("second!");
 						<li>Since there are no more events, the program ends.</li>
 					<ul>
 				</section>
-
 				<section>
 					<h2>Event Loop (4)</h2>
 					<ul>
@@ -743,7 +565,6 @@ console.log("second!");
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Event Loop (5)</h2>
 					<ul>
@@ -755,20 +576,17 @@ console.log("second!");
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Callback Hell (1)</h2>
 					<p>Callbacks are great for asynchronous programming, but...</p>
 					<p>It can lead to <em>callback hell</em>, where callbacks get indented</p>
 				  <p><a href="images/callBackHell.png"><img height="518" src="images/callBackHell.png"></a></p>
 				</section>
-
 				<section>
 					<h2>Callback Hell (2)</h2>
 					<p>Here the callbacks have been highlighted...</p>
 				  <p><a href="images/callBacksHighlighted.png"><img height="518" src="images/callBacksHighlighted.png"></a></p>
 				</section>
-
 				<section>
 					<h2>Callback Hell (3)</h2>
 					<ul>
@@ -781,7 +599,6 @@ console.log("second!");
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Callback Hell (4)</h2>
 					<ul>
@@ -802,19 +619,16 @@ console.log("second!");
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Callback Hell (5)</h2>
 					<p>Fixing with Named Callbacks</p>
 				  <p><a href="images/namedCallbacks.png"><img height="518" src="images/namedCallbacks.png"></a></p>
 				</section>
-
 				<section>
 					<h2>Callback Hell (6)</h2>
 					<p>Here the callbacks have been highlighted...</p>
 				  <p><a href="images/namedCallbacksHighlighted.png"><img height="518" src="images/namedCallbacksHighlighted.png"></a></p>
 				</section>
-
 				<section>
 					<h2>Just Callbacks?</h2>
 					<ul>
@@ -828,7 +642,6 @@ console.log("second!");
 						<li>We'll discuss these concepts next week</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Node Execution Model (1)</h2>
 					<ul>
@@ -838,7 +651,6 @@ console.log("second!");
 						<li>IO is handled in parallel.</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Node Execution Model (2)</h2>
 					<ul>
@@ -861,7 +673,6 @@ console.log("second!");
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Node Execution Model (3)</h2>
 					<ul>
@@ -870,7 +681,6 @@ console.log("second!");
 						<li>You are now in a position to understand the Javascript implementation of the Contacts web service</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Hands-On Demo</h2>
 					<ul>
@@ -878,16 +688,11 @@ console.log("second!");
 						<li>Does everyone have Node installed?</li>
 					</ul>
 				</section>
-
 			</div>
-
 		</div>
-
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
 		<script>
-
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -895,9 +700,7 @@ console.log("second!");
 				progress: true,
 				history: true,
 				center: true,
-
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -908,8 +711,6 @@ console.log("second!");
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-
 		</script>
-
 	</body>
 </html>
