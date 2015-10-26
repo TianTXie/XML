@@ -360,9 +360,9 @@ standalone="standalone_status"
 				<section>
 				<h2>XML - CDATA Sections</h2>
 				<p>CDATA are defined as blocks of text that are not parsed by the parser, but are otherwise recognized as markup.</p>
-				<pre> <code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 						<![CDATA[<message> XML <--/message>]] >
-				</code></pre>
+	</code></pre>
 				<p>In the above syntax, everthing between <em>message</em> and <em>/message</em> is treated as character data and not as markup.</p>
   			        </section>
 
@@ -411,9 +411,8 @@ standalone="standalone_status"
 				<section>
 		<h2>XML - White Spaces(2)</h2>
 		<pre><code data-trim contenteditable>
-<name>TanmayPatil</name> and <name>Tanmay Patil</name>
-	</code>
-		</pre>
+<name>TanmayPatil</name> and <name>Tanmay Patil</name></code></pre>
+
 		<p>The above two elements are different because of the space between <strong>Tanmay</strong> and <strong>Patil</strong>. Any program reading this element in an XML file is obliged to maintain the distinction.</p>
 		</section>
 
@@ -430,17 +429,13 @@ standalone="standalone_status"
 		<section>
 			<h2>XML - White Spaces(4)</h2>
 			<p>A special attribute named xml:space may be attached to an element. This indicates that whitespace should not be removed for that element by the application. You can set this attribute to default or preserve as shown in the example below:</p>
-			<pre>
-				<code data-trim contenteditable><!ATTLIST address  xml:space (default|preserve) 'preserve'></code>
-			</pre>
+			<pre><code data-trim contenteditable><!ATTLIST address  xml:space (default|preserve) 'preserve'></code></pre>
 		</section>
 
 		<section>
 			<h2>XML - Processing(1)</h2>
 				<p>Processing instructions (PIs) allow documents to contain instructions for applications. PIs are not part of the character data of the document, but MUST be passed through to the application.</p>
-			<pre>
-			<code data-trim contenteditable>Syntax:<?target instructions?></code>
-		</pre>
+			<pre><code data-trim contenteditable>Syntax:<?target instructions?></code></pre>
 			<ul>
 				<li><strong>target</strong> - identifies the application to which the instruction is directed.<br>
 			</li>
@@ -455,9 +450,7 @@ standalone="standalone_status"
 		</section>
 <section>
 	<h2>XML - Processing(2)</h2>
-	<pre>
-	<code data-trim contenteditable><?xml-stylesheet href="****.css" type="text/css"?></code>
-</pre>
+	<pre><code data-trim contenteditable><?xml-stylesheet href="****.css" type="text/css"?></code></pre>
 <p>Here, the target is xml-stylesheet. href="****.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
 
 In this case, a browser recognizes the target by indicating that the XML should be transformed before being shown; the first attribute states that the type of the transform is XSL and the second attribute points to its location.</p>
@@ -468,14 +461,11 @@ In this case, a browser recognizes the target by indicating that the XML should 
 <section>
 	<h2>XML - Processing(3)</h2>
 	<p>A PI can contain any data except the combination ?>, which is interpreted as the closing delimiter. Here are two examples of valid PIs:</p>
-<pre>
-<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 
 	<?welcome to pg=10 of XML?>
 
-	<?welcome?>
-</code>
-</pre>
+	<?welcome?></code></pre>
 </section>
 
 <section>
@@ -503,35 +493,29 @@ Encoding is the process of converting unicode characters into their equivalent b
 		<h2>XML-Encoding(2)</h2>
 		<p>
 			The syntax for UTF-8 encoding is below:
-			<pre>
-			<code data-trim contentEditable>
+			<pre><code data-trim contentEditable>
 				<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-			</code>
-		</pre>
+			</code></pre>
 		</p>
 		<p>
 			The syntax for UTF-16 encoding is below:
-			<pre>
-			<code data-trim contentEditable>
+			<pre><code data-trim contentEditable>
 				<?xml version="1.0" encoding="UTF-16" standalone="no" ?>
-			</code>
-		</pre>
+			</code></pre>
 		</p>
 </section>
 
 <section>
 	<h2>XML-Encoding(3)</h2>
 	<p>Example:</p>
-	<pre>
-		<code data-trim contentEditable>
+	<pre><code data-trim contentEditable>
 			<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <contact-info>
    <name>Amy</name>
    <company>University of Colorado, Boulder</company>
    <phone>(011) 123-4567</phone>
 </contact-info>
-		</code>
-	</pre>
+		</code></pre>
 </section>
 
 <section>
@@ -571,8 +555,7 @@ with the constraints expressed in it.</p>
 <section>
 	<h2>XML-Validation(3)</h2>
 <p>Example:</p>
-	<pre>
-		<code data-trim contenteditable>
+	<pre><code data-trim contenteditable>
 			<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE address
 [
@@ -586,8 +569,7 @@ with the constraints expressed in it.</p>
    <company>University of colorado, Boulder</company>
    <phone>(011) 123-4567</phone>
 </address>
-		</code>
-	</pre>
+		</code></pre>
 </section>
 
 <section>
@@ -624,8 +606,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 <!ELEMENT heading (#PCDATA)>
 <!ELEMENT body (#PCDATA)>
 ]>
-</code>
-	</pre>
+</code></pre>
 
 </section>
 
@@ -666,8 +647,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 <heading>Reminder</heading>
 <body>Don't forget the due day</body>
 </note>
-</code>
-</pre>
+</code></pre>
 
 </section>
 
@@ -676,18 +656,15 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 <p>XML schema is used to describe and validate the structure and the content of XML data</p>
 <p>
 <strong>Simple Type</strong> - Simple type element is used only in the context of the text. Some of predefined simple types are: xs:integer, xs:boolean, xs:string, xs:date. For example:</p>
-<pre>
-	<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 		<xs:element name="phone_number" type="xs:int" />
-	</code>
-</pre>
+	</code></pre>
 </section>
 
 <section>
 <h2>XML-Schemas(2)</h2>
 <p><strong>Complex Type</strong> - A complex type is a container for other element definitions. This allows to specify which child elements an element can contain and to provide some structure within the XML documents. </p>
-<pre>
-	<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 		<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:element name="contact">
@@ -700,15 +677,13 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
     </xs:complexType>
 </xs:element>
 </xs:schema>
-</code>
-</pre>
+</code></pre>
 </section>
 
 <section>
 <h2>XML-Schemas(3)</h2>
 <p><strong>Global Types</strong> - With global type, a single type is defined in document, which can be used by all other references. For example:</p>
-<pre>
-	<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 		<xs:element name="AddressType">
     <xs:complexType>
         <xs:sequence>
@@ -717,15 +692,13 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
         </xs:sequence>
     </xs:complexType>
 </xs:element>
-	</code>
-</pre>
+	</code></pre>
 <p>Here, we defined a general type <em>name</em> and <em>company</em>.</p>
 </section>
 
 <section>
 	<h2>XML-Schemas(4)</h2>
-	<pre>
-		<code data-trim contenteditable>
+	<pre><code data-trim contenteditable>
 			<xs:element name="Address1">
     <xs:complexType>
         <xs:sequence>
@@ -742,8 +715,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
         </xs:sequence>
     </xs:complexType>
 </xs:element>
-		</code>
-	</pre>
+		</code></pre>
 	<p>
 Now, we can use <em>name</em> and <em>company</em> without define them twice.
 </p>
@@ -759,15 +731,13 @@ An XML document is always descriptive. The tree structure is often referred to a
 <p>
 The structure of XML tree is:
 </p>
-	<pre>
-		<code data-trim contenteditable>
+	<pre><code data-trim contenteditable>
 			<root>
   <child>
     <subchild>.....</subchild>
   </child>
 </root>
-		</code>
-	</pre>
+		</code></pre>
 </section>
 
 <section>
@@ -779,8 +749,7 @@ The structure of XML tree is:
 <section>
 	<h2>XML-Tree Structure(3)</h2>
 <p>The image in the above page represents books in this XML:</p>
-	<pre>
-		<code data-trim contenteditable>
+	<pre><code data-trim contenteditable>
 			<?xml version="1.0" encoding="UTF-8"?>
 	<bookstore>
 	  <book category="computer science">
@@ -796,8 +765,7 @@ The structure of XML tree is:
 	    <price>29.99</price>
 	  </book>
 	</bookstore>
-		</code>
-	</pre>
+		</code></pre>
 
 </section>
 <section>
@@ -852,18 +820,12 @@ To read and update - create and manipulate - an XML document, we need an XML par
 <p>
 Loading an XML file into the parser:
 </p>
-<pre>
-
-
-<xmp>
+<pre><xmp>
 <script language="JavaScript">
  var xmlDoc = new ActiveXObject("Microsoft.XMLDOM")
  xmlDoc.async="false"
  xmlDoc.load("note.xml")
- </xmp>
-
-
-</pre>
+ </xmp></pre>
 </section>
 
 <section>
@@ -871,34 +833,28 @@ Loading an XML file into the parser:
 	<p>
 The following JavaScript reads XML data from an XML document and writes the XML data into (waiting) HTML elements.
 	</p>
-<pre>
-	<xmp>
+<pre><xmp>
 var xmlDoc = new ActiveXObject("Microsoft.XMLDOM")
 xmlDoc.async="false"
 xmlDoc.load("note.xml")
 
 document.write(xmlDoc.getElementsByTagName("from").item(0).text)
-	</xmp>
-</pre>
+	</xmp></pre>
 </section>
 
 <section>
 	<h2>XML-NameSpace(1)</h2>
 <p>In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications. A Namespace is a set of unique names. Namespace is a mechanisms by which element and attribute name can be assigned to group. The Namespace is identified by URI(Uniform Resource Identifiers).</p>
 <p>The namespace can be defined by an <strong>xmlns</strong> attribute in the start tag of an element.</p>
-<pre>
-	<code data-trim contentEditable>
+<pre><code data-trim contentEditable>
 		<element xmlns:name="URL">
-	</code>
-</pre>
+	</code></pre>
 
 </section>
 <section>
 <h2>XML-NameSpace(2)</h2>
 <p>Defining one prefix for a namespace:</p>
-<pre>
-
-	<code data-trim contentEditable>
+<pre><code data-trim contentEditable>
 		<foo:tag xmlns:foo="http://me.com/namespaces/foofoo">
 
   <foo:head>
@@ -912,8 +868,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
     </foo:e2>
   </foo:body>
 </foo:tag>
-	</code>
-</pre>
+	</code></pre>
 <p>For all elements within <foo:tag>, the namespace prefix foo is assocciated with the namespace URI <em>http://me.com/namespaces/foofoo.</em></p>
 
 
@@ -922,8 +877,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 <section>
 <h2>XML-NameSpace(3)</h2>
 <p>Different prefix, same namespace:</p>
-<pre>
-	<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 		<tag>
 
   <foo:head xmlns:foo="http://me.com/namespaces/foofoo">
@@ -937,16 +891,14 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
     </bar:e2>
   </bar:body>
 <tag>
-	</code>
-</pre>
+	</code></pre>
 <p>Here, the <em>foo</em> and <em>bar</em> are defined in same namespace.</p>
 </section>
 
 <section>
 	<h2>XML-NameSpace(4)</h2>
 	<p>Same prefix, different namespaces:</p>
-	<pre>
-		<code data-trim contenteditable>
+	<pre><code data-trim contenteditable>
 			<myns:html xmlns:myns="http://www.w3c.org/1999/xhtml">
 <myns:head>
 	<myns:title>A really bad idea</myns:title>
@@ -969,12 +921,9 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 <section>
 <h2>XML-NameSpace(5)</h2>
 <p>Defining more than one namespace using more than one xmlns declaration:</p>
-<pre>
-	<code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 		<foo:tag xmlns:foo="http://me.com/namespaces/foofoo"
-         xmlns:bar="http://me.com/namespaces/foobar"
-         >
-
+         xmlns:bar="http://me.com/namespaces/foobar">
   <foo:head>
     <foo:title>An example document</foo:title>
   </foo:head>
@@ -986,9 +935,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
     </bar:e2>
   </bar:body>
 </foo:tag>
-
-	</code>
-</pre>
+</code></pre>
 </section>
 
 <section>
