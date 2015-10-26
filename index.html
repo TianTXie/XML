@@ -47,6 +47,19 @@
 					<h4>Presentation 2&mdash; Class 5828&mdash; Fall 2015</h4>
         <p> Yun Zhou and Tiantian Xie</p>
 				</section>
+		<section>
+		<h2>Table of Contents</h2>
+		<p>
+		<ul>
+		<li>Part 1: Introduction to XML</li>
+			<li>Part 2: Basic XML</li>
+			<li>Part 3:Advanced XML</li>
+			<Li>Part 4: XML Tools</li>
+			<li>Part 5: References</li>
+		</ul>
+</p>
+
+		</section>
 
 
 			<section>
@@ -343,9 +356,9 @@ standalone="standalone_status"
 				<h2>XML - CDATA Sections</h2>
 				<p>CDATA are defined as blocks of text that are not parsed by the parser, but are otherwise recognized as markup.</p>
 				<pre> <code data-trim contenteditable>
-						<![CDATA[<message> XML </message>]] >
+						<![CDATA[<message> XML <--/message>]] >
 				</code></pre>
-				<p>In the above syntax, everthing between <message> and </message> is treated as character data and not as markup.</p>
+				<p>In the above syntax, everthing between <em>message</em> and <em>/message</em> is treated as character data and not as markup.</p>
   			        </section>
 
 				<section>
@@ -378,22 +391,22 @@ standalone="standalone_status"
 
 				<section>
 					<h2>XML - White Spaces(1)</h2>
-					<pre><p>Whitespace is a collection of spaces, tabs, and newlines. They are generally used to make a document more readable.</p></pre>
+<p>Whitespace is a collection of spaces, tabs, and newlines. They are generally used to make a document more readable.</p>
+
 					<p>XML document contain two types of white spaces:
 						<ul>
 						<li>
-						(a) Significant Whitespace  </li><br>
+						Significant Whitespace  </li><br>
 						<li>
-						(b) Insignificant Whitespace. Both are explained below with examples.</p>
+						Insignificant Whitespace. Both are explained below with examples.</p>
 					</li>
 				</ul>
 				</section>
 
 				<section>
 		<h2>XML - White Spaces(2)</h2>
-		<pre>
-			<code data-trim contenteditable>
-		<name>TanmayPatil</name> and <name>Tanmay Patil</name>
+		<pre><code data-trim contenteditable>
+<name>TanmayPatil</name> and <name>Tanmay Patil</name>
 	</code>
 		</pre>
 		<p>The above two elements are different because of the space between <strong>Tanmay</strong> and <strong>Patil</strong>. Any program reading this element in an XML file is obliged to maintain the distinction.</p>
@@ -402,8 +415,9 @@ standalone="standalone_status"
 		<section>
 			<h2>XML - White Spaces(3)</h2>
 <p>Insignificant whitespace means the space where only element content is allowed. For example:</p>
-<pre>
-	<code data-trim contenteditable><address.category="residence"> and <address....category="..residence"></code></pre>
+<pre><code data-trim contenteditable>
+<address.category="residence"> and <address....category="..residence">
+</code></pre>
 <p>These two examples are same. Here, the space is represented by dots (.).
 	The space between address and category is insignificant.</p>
 		</section>
@@ -418,9 +432,7 @@ standalone="standalone_status"
 
 		<section>
 			<h2>XML - Processing(1)</h2>
-			<pre>
-				<p>"Processing instructions (PIs) allow documents to contain instructions for applications. PIs are not part of the character data of the document, but MUST be passed through to the application.</p>
-			</pre>
+				<p>Processing instructions (PIs) allow documents to contain instructions for applications. PIs are not part of the character data of the document, but MUST be passed through to the application.</p>
 			<pre>
 			<code data-trim contenteditable>Syntax:<?target instructions?></code>
 		</pre>
@@ -441,9 +453,9 @@ standalone="standalone_status"
 	<pre>
 	<code data-trim contenteditable><?xml-stylesheet href="****.css" type="text/css"?></code>
 </pre>
-	<pre>Here, the target is xml-stylesheet. href="tutorialspointstyle.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
+<p>Here, the target is xml-stylesheet. href="****.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
 
-In this case, a browser recognizes the target by indicating that the XML should be transformed before being shown; the first attribute states that the type of the transform is XSL and the second attribute points to its location.</pre>
+In this case, a browser recognizes the target by indicating that the XML should be transformed before being shown; the first attribute states that the type of the transform is XSL and the second attribute points to its location.</p>
 </section>
 
 
@@ -454,7 +466,7 @@ In this case, a browser recognizes the target by indicating that the XML should 
 <pre>
 <code data-trim contenteditable>
 
-	<?welcome to pg=10 of XML?><br>
+	<?welcome to pg=10 of XML?>
 
 	<?welcome?>
 </code>
@@ -463,9 +475,9 @@ In this case, a browser recognizes the target by indicating that the XML should 
 
 <section>
 	<h2>XML-Encoding(1)</h2>
-	<pre>
+	<p>
 Encoding is the process of converting unicode characters into their equivalent binary representation. When the XML processor reads an XML document, it encodes the document depending on the type of encoding.
-	</pre>
+	</p>
 	<p style="text-align:left">
 		Encoding Types:
 		<ul>
@@ -504,6 +516,7 @@ Encoding is the process of converting unicode characters into their equivalent b
 
 <section>
 	<h2>XML-Encoding(3)</h2>
+	<p>Example:</p>
 	<pre>
 		<code data-trim contentEditable>
 			<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
@@ -518,13 +531,20 @@ Encoding is the process of converting unicode characters into their equivalent b
 
 <section>
 	<h2>XML-Validation(1)</h2>
-	<pre>
-Validation is a process by which an XML document is validated. An XML document is said to be valid if its contents match with the elements, attributes and associated document type declaration(DTD), and if the document complies with the constraints expressed in it. Validation is dealt in two ways by the XML parser. They are:
+	<p>
+Validation is a process by which an XML document is
+validated. An XML document is said to be valid if its
+contents match with the elements, attributes and associated
+document type declaration(DTD), and if the document complies
+with the constraints expressed in it.</p>
+<p>Validation is dealt in two ways by the XML parser.They are:</p>
+<ul>
 <li>Well-formed XML document
 </li>
 <li>Valid XML document
 </li>
-	</pre>
+</ul>
+
 </section>
 
 <section>
@@ -545,6 +565,7 @@ Validation is a process by which an XML document is validated. An XML document i
 
 <section>
 	<h2>XML-Validation(3)</h2>
+<p>Example:</p>
 	<pre>
 		<code data-trim contenteditable>
 			<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
@@ -562,14 +583,18 @@ Validation is a process by which an XML document is validated. An XML document i
 </address>
 		</code>
 	</pre>
+</section>
 
-<pre>
+<section>
+
 Above example is said to be well-formed as:
-(1)It defines the type of document. Here, the document type is element type.
-(2)It includes a root element named as address.
-(3)Each of the child elements among name, company and phone is enclosed in its self explanatory tag.
-(4)Order of the tags is maintained.
-</pre>
+<ul>
+<li>It defines the type of document. Here, the document type is element type.</li>
+<li>It includes a root element named as address.</li>
+<li>Each of the child elements among name, company and phone is enclosed in its self explanatory tag.</li>
+<li>Order of the tags is maintained.</li>
+</ul>
+
 </section>
 
 <section>
@@ -579,9 +604,9 @@ Above example is said to be well-formed as:
 
 <section>
 	<h2>XML-DTD(1)</h2>
-	<pre>
+	<p>
 The purpose of a DTD is to define the structure of an XML document. It defines the structure with a list of legal elements:
-	</pre>
+	</ps>
 	<pre>
 <code data-trim contenteditable>
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
@@ -600,12 +625,12 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 	<h2>XML-DTD(2)</h2>
 <p>The DTD in the above page is interpreted like this:</p>
 <ul>
-	<li>!DOCTYPE note defines that the root element of the document is note</li>
-	<li>!ELEMENT note defines that the note element must contain the elements: "to, from, heading, body"</li>
-	<li>!ELEMENT to defines the to element to be of type "#PCDATA"</li>
-	<li>!ELEMENT from defines the from element to be of type "#PCDATA"</li>
-	<li>!ELEMENT heading defines the heading element to be of type "#PCDATA"</li>
-	<li>!ELEMENT body defines the body element to be of type "#PCDATA"</li>
+<li>!DOCTYPE defines that the root element of the document is note</li>
+<li>!ELEMENT note defines that the note element must contain the elements: "to, from, heading, body"</li>
+<li>!ELEMENT to defines the to element to be of type "#PCDATA"</li>
+<li>!ELEMENT from defines the from element to be of type "#PCDATA"</li>
+<li>!ELEMENT heading defines the heading element to be of type "#PCDATA"</li>
+<li>!ELEMENT body defines the body element to be of type "#PCDATA"</li>
 </ul>
 </section>
 
@@ -621,7 +646,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 
 <section>
 <h2>XML-DTD(4)</h2>
-<pre>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal .dtd file or a valid URL. To refer it as external DTD, standalone attribute in the XML declaration must be set as no. This means, declaration includes information from the external source.</pre>
+<p>In external DTD elements are declared outside the XML file. They are accessed by specifying the system attributes which may be either the legal .dtd file or a valid URL. To refer it as external DTD, standalone attribute in the XML declaration must be set as no. This means, declaration includes information from the external source.</p>
 <pre>
 <code data-trim contenteditable>
 	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
@@ -639,7 +664,7 @@ The purpose of a DTD is to define the structure of an XML document. It defines t
 
 <section>
 <h2>XML-Schemas(1)</h2>
-<pre>XML schema is used to describe and validate the structure and the content of XML data</pre>
+<p>XML schema is used to describe and validate the structure and the content of XML data</p>
 <p>
 <strong>Simple Type</strong> - Simple type element is used only in the context of the text. Some of predefined simple types are: xs:integer, xs:boolean, xs:string, xs:date. For example:</p>
 <pre>
@@ -717,13 +742,15 @@ Now, we can use <em>name</em> and <em>company</em> without define them twice.
 
 <section>
 	<h2>XML-Tree Structure(1)</h2>
+<p>
+An XML document is always descriptive. The tree structure is often referred to as XML Tree and plays an important role to describe any XML document easily.The tree structure contains root (parent) elements, child elements and so on. By using tree structure, you can get to know all succeeding branches and sub-branches starting from the root. The parsing starts at the root, then moves down the first branch to an element, take the first branch from there, and so on to the leaf nodes.
+</p>
+</section>
+<section>
+<p>
+The structure of XML tree is:
+</p>
 	<pre>
-An XML document is always descriptive. The tree structure is often referred to as XML Tree and plays an important role to describe any XML document easily.
-
-The tree structure contains root (parent) elements, child elements and so on. By using tree structure, you can get to know all succeeding branches and sub-branches starting from the root. The parsing starts at the root, then moves down the first branch to an element, take the first branch from there, and so on to the leaf nodes.
-	</pre>
-	<pre>
-		The structure of XML tree is:
 		<code data-trim contenteditable>
 			<root>
   <child>
@@ -766,9 +793,13 @@ The tree structure contains root (parent) elements, child elements and so on. By
 </section>
 <section>
 <h2>XML-DOM(1)</h2>
-<pre>
+<p>
 The Document Object Model (DOM) is the foundation of XML. XML documents have a hierarchy of informational units called nodes; DOM is a way of describing those nodes and the relationships between them.
-</pre>
+</p>
+</section>
+
+<section>
+
 <p>
 The following table lists the most commonly used node types:
 </p>
@@ -804,9 +835,11 @@ The following table lists the most commonly used node types:
 
 <section>
 <h2>XML-DOM(2)</h2>
-<pre>
+<p>
 To read and update - create and manipulate - an XML document, we need an XML parser. The Microsoft XML parser is a COM component that comes with Microsoft Internet Explorer 5.0. Once we have installed IE 5.0, the parser is available to scripts inside HTML documents and ASP files.
-</pre>
+</p>
+</section>
+<section>
 <p>
 Loading an XML file into the parser:
 </p>
@@ -842,7 +875,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 
 <section>
 	<h2>XML-NameSpace(1)</h2>
-<pre>In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications. A Namespace is a set of unique names. Namespace is a mechanisms by which element and attribute name can be assigned to group. The Namespace is identified by URI(Uniform Resource Identifiers).</pre>
+<p>In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications. A Namespace is a set of unique names. Namespace is a mechanisms by which element and attribute name can be assigned to group. The Namespace is identified by URI(Uniform Resource Identifiers).</p>
 <p>The namespace can be defined by an <strong>xmlns</strong> attribute in the start tag of an element.</p>
 <pre>
 	<code data-trim contentEditable>
@@ -951,7 +984,9 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 
 <section>
 <h2>XML-Databases</h2>
-<pre>XML Database is used to store the huge amount of information in the XML format. As the use of XML is increasing in every field, it is required to have the secured place to store the XML documents. The data stored in the database can be queried using <strong>XQuery</strong>, serialized, and exported into desired format.</pre>
+<p>XML Database is used to store the huge amount of information in the XML format. As the use of XML is increasing in every field, it is required to have the secured place to store the XML documents. The data stored in the database can be queried using <strong>XQuery</strong>, serialized, and exported into desired format.</p>
+</section>
+<section>
 <p>Two types of database:</p>
 <ul>
 	<li>XML- enabled:data are stored in tables consisting of rows and columns. The tables contain set of records, which in turn consist of fields.</li>
