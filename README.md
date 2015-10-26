@@ -2,4 +2,4 @@
 
 Authors: Yun Zhou and Tiantian Xie
 
-The slides are available on-line at [https://tiantxie.github.io/XML].
+The slides are available on-line at https://tiantxie.github.io/XML.
