@@ -51,17 +51,17 @@
 		<h2>Table of Contents</h2>
 		<p>
 		<ul>
-		<li>Part I: Introduction to XML</li>
-			<li>Part II: Basic XML</li>
-			<li>Part III:Advanced XML</li>
-			<Li>Part IV: XML Tools</li>
-			<li>Part V: References</li>
+		<li>Part 1: Introduction to XML</li>
+			<li>Part 2: Basic XML</li>
+			<li>Part 3: Advanced XML</li>
+			<Li>Part 4: XML Tools</li>
+			<li>Part 5: References</li>
 		</ul>
 </p>
 
 		</section>
 	<section>
-<p>Part I: Introduction to XML</p>
+<p>Part 1: Introduction to XML</p>
 	</section>
 
 
@@ -101,12 +101,12 @@
 </ul>
 			</section>
 <section>
-<p>Part II: Basic XML</p>
+<p>Part 2: Basic XML</p>
 </section>
 
 			<section>
 
-				<h2>XML - Syntax I</h2>
+				<h2>XML - Syntax(1)</h2>
 				<p>Following is a complete XML document:</p>
 				<pre><code data-trim contenteditable>
 <?xml version="1.0"?>
@@ -122,7 +122,7 @@
 
 			<section>
 
-				<h2>XML - Syntax II</h2>
+				<h2>XML - Syntax(2)</h2>
 				<p>A XML document generally consists of two parts: </p>
 				<ul>
 				<li><strong>Document Prolog Section</strong>: The document prolog comes at the top of the document, before the root element. This section contains:</li>
@@ -143,7 +143,7 @@
 
 			<section>
 
-				<h2>XML - Syntax III</h2>
+				<h2>XML - Syntax(3)</h2>
 				<ul>
 				<p>The following diagram depicts the syntax rules to write different types of markup and text in an XML document.</p>
 				</ul>
@@ -152,7 +152,7 @@
 
 			<section>
 
-				<h2>XML - Declaration I</h2>
+				<h2>XML - Declaration(1)</h2>
 				<ul>
 				<p>The XML document can optionally have an XML declaration. It is written as below:</p>
 				<pre><code data-trim contenteditable>
@@ -167,7 +167,7 @@ standalone="standalone_status"
 			</section>
 
 			<section>
-				<h2>XML - Declaration II</h2>
+				<h2>XML - Declaration(2)</h2>
 				<ul>
 				<p><strong>Syntax Rules for XML declaration</strong></p>
 				<li>The XML declaration is case sensitive.</li>
@@ -181,7 +181,7 @@ standalone="standalone_status"
 
 			<section>
 
-				<h2>XML - Declaration II</h2>
+				<h2>XML - Declaration(3)</h2>
 				<ul>
 				<p>Following are few examples of XML declarations:</p>
 				<li>XML declaration with no parameters:</li>
@@ -207,7 +207,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Tags I</h2>
+				<h2>XML - Tags(1)</h2>
 				<ul>
 				<p><strong>Start Tag and End Tag</strong>: The beginning of every non-empty XML element is marked by a start-tag. Every element that has a start tag should end with an end-tag. An example of start and end-tag is:</P>
 				<pre><code data-trim contenteditable>
@@ -219,7 +219,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Tags II</h2>
+				<h2>XML - Tags(2)</h2>
 				<ul>
 				<p><strong>XML Tags Rules</strong></p>
 				<li>Rule 1: XML tags are case-sensitive. </li>
@@ -229,7 +229,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Elements I</h2>
+				<h2>XML - Elements(1)</h2>
 				<ul>
 				<p>Following is the syntax to write an XML element:</p>
 				<pre><code data-trim contenteditable>
@@ -258,7 +258,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Elements II</h2>
+				<h2>XML - Elements(2)</h2>
 				<ul>
 				<p><strong>Nesting of elements</strong>: An XML-element can contain multiple XML-elements as its children, but the children elements must not overlap. i.e., an end tag of an element must have the same name as that of the most recent unmatched start tag.</p>
 				<pre><code data-trim contenteditable>
@@ -274,7 +274,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Elements III</h2>
+				<h2>XML - Elements(3)</h2>
 				<ul>
 				<p>Following rules are required to be followed for XML elements:</p>
 				<li>An element name can contain any alphanumeric characters. The only punctuation mark allowed in names are the hyphen (-), under-score (_) and period (.).</li>
@@ -286,7 +286,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Attributes I</h2>
+				<h2>XML - Attributes(1)</h2>
 				<ul>
 				<p>An XML attribute has following syntax:</p>
 				<pre><code data-trim contenteditable>
@@ -304,7 +304,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML - Attributes II</h2>
+				<h2>XML - Attributes(2)</h2>
 				<ul>
 				<p>Following are the <strong>rules</strong> that need to be followed for attributes:</p>
 				<li>An attribute name must not appear more than once in the same start-tag or empty-element tag.</li>
@@ -316,7 +316,7 @@ standalone="standalone_status"
 
 
 			<section>
-				<h2>XML Attributes – Example</h2>
+				<h2>XML Attributes(3)</h2>
 				<ul>
 				<p>Attributes are used to add a unique label to an element, place the label in a category, add a Boolean flag, or otherwise associate it with some string of data. Following example demonstrates the use of attributes:</p>
 				<pre><code data-trim contenteditable>
@@ -607,7 +607,7 @@ Above example is said to be well-formed as:
 	<p>If an XML document is well-formed and has an associated Document Type Declaration (DTD), then it is said to be a valid XML document. </p>
 </section>
 <section>
-<p>Part III: Advanced XML</p>
+<p>Part 3: Advanced XML</p>
 </section>
 
 <section>
@@ -1004,7 +1004,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 </section>
 
 <section>
-<p>Part IV: XML Tools</p>
+<p>Part 4: XML Tools</p>
 </section>
 
 
@@ -1039,7 +1039,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 <ul>
 <p><strong>Text Editors</strong></p>
 <p>Any simple text editor such as Notepad, Textpad or TextEdit can be used to create or view an XML document as shown below:</p>
- <p><a href="images/viewer_example1.png"><img height="450" src="images/viewer_example1.png"></a></p>
+ <p><a href="images/viewer_example1.png"><img height="380" src="images/viewer_example1.png"></a></p>
 
 </ul>
 </section>
@@ -1055,9 +1055,9 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 
 
 <section>
-<h2>XML-Editor I</h2>
+<h2>XML-Editor(1)</h2>
 <ul>
-<p>XML Editor is a markup language editor. The XML documents can be edited or created using existing editors such as Notepad, Wordpad or any similar text editor. You can also find a professional XML editor online or for downloading, which has more powerful editing features such as:</p>
+<p>XML Editor is a markup language editor. The XML documents can be edited or created using existing editors such as Notepad, Wordpad. You can also find a XML editor online or for downloading, which has more powerful features such as:</p>
 
 
     <li>It automatically closes the tags that are left open.</li>
@@ -1075,7 +1075,7 @@ document.write(xmlDoc.getElementsByTagName("from").item(0).text)
 </section>
 
 <section>
-<h2>XML-Editor II</h2>
+<h2>XML-Editor(2)</h2>
 <ul>
 <p>There are some open source XML editors given below:</p>
 
