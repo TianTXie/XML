@@ -439,7 +439,7 @@ standalone="standalone_status"
 <section>
 	<h2>XML - Processing(2)</h2>
 	<pre>
-	<code data-trim contenteditable><?xml-stylesheet href="tutorialspointstyle.css" type="text/css"?></code>
+	<code data-trim contenteditable><?xml-stylesheet href="****.css" type="text/css"?></code>
 </pre>
 	<pre>Here, the target is xml-stylesheet. href="tutorialspointstyle.css" and type="text/css" are data or instructions that the target application will use at the time of processing the given XML document.
 
@@ -454,7 +454,7 @@ In this case, a browser recognizes the target by indicating that the XML should 
 <pre>
 <code data-trim contenteditable>
 
-	<?welcome to pg=10 of tutorials point?><br>
+	<?welcome to pg=10 of XML?><br>
 
 	<?welcome?>
 </code>
@@ -763,6 +763,81 @@ The tree structure contains root (parent) elements, child elements and so on. By
 		</code>
 	</pre>
 
+</section>
+<section>
+<h2>XML-DOM(1)</h2>
+<pre>
+The Document Object Model (DOM) is the foundation of XML. XML documents have a hierarchy of informational units called nodes; DOM is a way of describing those nodes and the relationships between them.
+</pre>
+<p>
+The following table lists the most commonly used node types:
+</p>
+<pre>
+<table style="width:100%">
+	<tr>
+			<td>Node Type</td>
+			<td>Example</td>
+	</tr>
+	<tr>
+			<td>Document type</td>
+			<td><xmp><!DOCTYPE food SYSTEM "food.dtd"></xmp></td>
+	</tr>
+	<tr>
+			<td>processing instruction</td>
+			<td><xmp><?xml version="1.0"?></xmp></td>
+		</tr>
+		<tr>
+			<td>Element</td>
+			<td><xmp><drink type="beer">Carlsberg</drink></xmp></td>
+			</tr>
+			<tr>
+				<td>Attribute</td>
+				<td>type="beer"</td>
+				</tr>
+				<tr>
+					<td>Text</td>
+					<td>Carlsberg</td>
+					</tr>
+				</table>
+</pre>
+</section>
+
+<section>
+<h2>XML-DOM(2)</h2>
+<pre>
+To read and update - create and manipulate - an XML document, we need an XML parser. The Microsoft XML parser is a COM component that comes with Microsoft Internet Explorer 5.0. Once we have installed IE 5.0, the parser is available to scripts inside HTML documents and ASP files.
+</pre>
+<p>
+Loading an XML file into the parser:
+</p>
+<pre>
+
+
+<xmp>
+<script language="JavaScript">
+ var xmlDoc = new ActiveXObject("Microsoft.XMLDOM")
+ xmlDoc.async="false"
+ xmlDoc.load("note.xml")
+ </xmp>
+
+
+</pre>
+</section>
+
+<section>
+	<h2>XML-DOM(3)</h2>
+	<p>
+The following JavaScript reads XML data from an XML document and writes the XML data into (waiting) HTML elements.
+	</p>
+<pre>
+	<xmp>
+var xmlDoc = new ActiveXObject("Microsoft.XMLDOM")
+xmlDoc.async="false"
+xmlDoc.load("note.xml")
+
+document.write(xmlDoc.getElementsByTagName("from").item(0).text)
+	</xmp>
+</pre>
 </section>
 
 <section>
